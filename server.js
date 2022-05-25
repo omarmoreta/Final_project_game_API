@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const PORT = process.env.PORT || 8080;
 const cors = require("cors");
 const app = express();
@@ -29,13 +28,10 @@ try {
 }
 
 // send the user to index html page inspite of the url
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/dist", "index.html"));
-});
 
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "User API",
+    message: "Nothing Game API",
   });
 });
 
